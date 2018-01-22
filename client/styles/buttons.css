@@ -1,0 +1,24 @@
+.button{
+    min-width:60px;
+    min-height:30px;
+    border-radius:5px;
+    background-color: #180879;
+    border-color:white;
+    color:white;
+}
+.button:hover {background-color: #2C14C5}
+
+.button:active {
+  background-color: #2C14C5;
+  box-shadow: 0 3px #666;
+  transform: translateY(2px);
+}
+
+.btnremove{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}

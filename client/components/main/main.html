@@ -1,0 +1,37 @@
+
+
+<div class="mainpage">
+    <div class="topbar">
+        <div ng-class="{conferenceContent:true, conferenceOpen:booleanshow}">
+            <input ng-Click="booleanshow = true" class="inputname" type="text" placeholder="{{selectedConference.title_it || 'Choose a conference'}}" ng-model="nameFilter">
+            <div class="ulconferences" ng-show="booleanshow">
+                <ul ng-repeat="conference in conferenceList | filter:nameFilter">
+                    <li class="conferenceOption" ng-click="selectConference(conference)">{{conference.title_it}}</li>
+                </ul>
+            </div>
+            <div></div>
+        </div>
+        <button class="dropdownbutton" ng-Click="booleanshow = !booleanshow">V</button>
+    </div>
+    <div class="middlebar" ng-show="selectedConference">
+        <div class="mbcontent">
+            <ul>
+                <li ng-click="go('main.participationForm')">Participation Form</li>
+                <li ng-click="go('main.participants')">Participants</li>
+                <li ng-click="go('main.toBeInvited')">To Be Invited</li>
+            </ul>
+        </div>
+    </div>
+    <!--<div class="sidenav" id="mysidenav">
+         <a href="javascript:void(0)" class="closebtn" ng-click="isShown = false">&times;</a>
+          <a ui-sref="main.participationForm">Participation Form</a>
+          <a ui-sref="main.participants">Participants</a>
+          <a ui-sref="main.toBeInvited">To Be Invited</a>
+    </div>
+    
+    <span style="font-size:15px;cursor:pointer" ng-click="isShown = true">&#9776; open</span>
+    -->
+    <div class="content" ui-view>
+    </div>
+</div>
+

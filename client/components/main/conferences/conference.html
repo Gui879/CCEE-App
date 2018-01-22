@@ -1,0 +1,40 @@
+<div class="col no-float text-center">
+    <h4>{{name}}</h4><button ng-click="submit()">Save to DB</button><button ng-click="exportToExcel('#tableToExport')">Export to Excel</button>
+    <div class="container overflowContain" id="collapsable">
+        <table class="table" id="tableToExport">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Arrival Date</th>
+                    <th>Arrival Hour</th>
+                    <th>Arrival Trasportation</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="atendee in atendeeList" ng-include="getTemplate(atendee)">
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+     <script type="text/ng-template" id="display">
+            <td>{{atendee.forename}}</td>
+            <td>{{atendee.arrival_date}}</td>
+            <td>{{atendee.arrival_hour}}</td>
+            <td>{{atendee.arrival_transportation}}</td>
+            <td>
+                <button ng-click="editAtendee(atendee)">Edit</button>
+            </td>
+        </script>
+    <script type="text/ng-template" id="edit">
+        <td>{{atendee.forename}}</td>
+        <td><input  class="inputtb" type="text" ng-model="selectedAtendee.arrival_date" /></td>
+        <td><input class="inputtb" type="text" ng-model="selectedAtendee.arrival_hour" /></td>
+        <td><input class="inputtb" type="text" ng-model="selectedAtendee.arrival_transportation" /></td>
+        <td>
+            <button ng-click="saveAtendee($index)">Save</button>
+            <button ng-click="reset()">Cancel</button>
+        </td>
+    </script>
+</div>

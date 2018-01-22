@@ -1,0 +1,36 @@
+<div class="details">
+    <p>{{conference.title_it}}</p>
+    <div class="left">
+        <form>
+            <p>Start Date</p>
+            <div>
+                <input ng-model="startdate.year" ng-readonly="readonly" type="number">-
+                <input ng-model="startdate.month" ng-readonly="readonly" type="number">-
+                <input ng-model="startdate.day" ng-readonly="readonly" type="number">
+            </div>
+            <p>End Date</p>
+            <div>
+                <input ng-model="enddate.year" ng-readonly="readonly" type="number">-
+                <input ng-model="enddate.month" ng-readonly="readonly" type="number">-
+                <input ng-model="enddate.day" ng-readonly="readonly" type="number">
+            </div>
+            <p>City</p>
+            <input ng-model="conference.city" ng-readonly="readonly" type="text" placeholder="{{conference.city}}">
+            <p>Country</p>
+            <input readonly type="text" value="{{conference.country_it}}">
+            <p>Last Change</p>
+            <input readonly type="text" value="{{conference.last_change}}">
+            <p>Last User</p>
+            <input readonly type="text" value="{{conference.last_user}}">
+            <p></p>
+            <div>
+                <input type="submit" ng-click="save()" value="Save">
+                <input type="submit" ng-click="edit()" value="Edit">
+                <input type="submit" ng-click="cancel()" value="Cancel">
+            </div>
+            
+            
+        </form>
+    </div>
+    <div class="right"></div>
+</div>

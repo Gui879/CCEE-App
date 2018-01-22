@@ -1,0 +1,21 @@
+<div class="toBeInvited">
+    <div >
+        <button ng-click="currentTPL='/conference'">Conference</button>
+        <button ng-click="currentTPL='/person'">Person</button>
+       <div ng-include src="currentTPL">
+        </div>
+    </div>
+    
+</div>
+
+<script type="text/ng-template" id ="/person">
+    <div class="groupContent">
+        <span>Person Content</span>
+    </div>
+</script>
+
+<script type="text/ng-template" id="/conference">
+    <div class="groupContent">
+        <span>Conference Content</span>
+    </div>
+</script>

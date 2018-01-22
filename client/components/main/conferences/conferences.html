@@ -1,0 +1,29 @@
+
+<div class="col-sm-9 no-float" >
+    <h4>Conferences</h4>
+    <div class="container overflowContain">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Start</th>
+                    <th>End</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="conference in conferenceList | filter:nameFilter">
+                    <td><a ui-sref="main.conference({id: conference.id, name:conference.title_it})">{{conference.title_it}}</a></td>
+                    <td>{{conference.start_date}}</td>
+                    <td>{{conference.end_date}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col-sm-3 no-float">
+    <h4>Search Conference</h4>
+    <form>
+        <input type="text" ng-model="nameFilter" placeholder="Name">
+        <button ng-click="clearName()"><i class="fa fa-times" aria-hidden="true"></i></button>
+    </form>
+</div>

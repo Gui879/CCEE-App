@@ -1,0 +1,17 @@
+{
+  "name": "timeWasteRedux",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "supervisor server"
+  },
+  "dependencies": {
+    "angular-animate": "^1.6.6",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "jsonwebtoken": "^7.4.2",
+    "pg": "^7.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.4.2"
+  }
+}
